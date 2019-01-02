@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4266979-13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-4266979-13');
+    </script>
+    <meta charset="utf-8">
+    <title>rockstar : {{ page.title }}</title>
+    <link type="text/css" rel="stylesheet" href="/assets/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  </head>
+  <body>
+    <header>
+      <h1>ROCKSTAR</h1>
+      <h2>Tommy used to work on the docs.</h2>
+      {% include nav.html %}
+    </header>
+    <main>
+    {{ content }}
+    </main>
+    <footer>
+        codewithrockstar.com website copyright &copy; 2018-2019 dylan beattie
+        </footer> 
+  </body>
+</html>
