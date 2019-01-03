@@ -131,6 +131,12 @@ main {
   p, li {
     line-height: 1.4em;
   }
+  div#wallpaper-gallery {
+    img {
+      border: 1px solid 3fff;
+      margin: 16px auto;
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
