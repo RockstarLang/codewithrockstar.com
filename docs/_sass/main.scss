@@ -132,9 +132,11 @@ main {
     line-height: 1.4em;
   }
   div#wallpaper-gallery {
+    width: 100%;
     img {
-      border: 1px solid 3fff;
+      border: 1px solid #666;
       margin: 16px auto;
+      display: block;
     }
   }
 }
