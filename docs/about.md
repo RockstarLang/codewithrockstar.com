@@ -2,17 +2,11 @@
 layout: default
 title: Home
 ---
-# Heading 1
+## Contact
 
-## Heading 2
+This website is maintained by Dylan Beattie [dylan@dylanbeattie.net](mailto:dylan@dylanbeattie.net) [@dylanbeattie](https://twitter.com/dylanbeattie)
 
-* Bullet
-* Bullet
-* Bullet
 
-This paragraph contains a `code snippet`
 
-```
-This is a code block
-```
+
 
