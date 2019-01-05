@@ -4,7 +4,7 @@ title: code
 ---
 ## Implementations
 
-You can find all the code for Rockstar at [github.com/dylanbeattie/rockstar](https://www.github.com/dylanbeattie/rockstar). 
+The Rockstar language spec is at [github.com/dylanbeattie/rockstar](https://www.github.com/dylanbeattie/rockstar). 
 
 Since the first release of the Rockstar specification in July 2018, numerous people around the web have created and published their own implementations of the language. Owing to the lack of a reference implementation or an official test suite, you may find inconsistencies between the behaviour of different versions of Rockstar. Try to think of this as part of the fun. 
 
