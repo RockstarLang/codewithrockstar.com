@@ -1,6 +1,6 @@
 ---
 layout: default
-title: rockstar : docs
+title: docs
 ---
 
 {% include_relative rockstar/spec.md %}
