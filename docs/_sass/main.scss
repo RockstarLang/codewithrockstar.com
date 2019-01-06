@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600&subset=cyrillic');
 $tablet-width: 768px;
 $desktop-width: 1024px;
+$content-max-width: 720px;
 @mixin tablet {
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
     @content;
@@ -48,8 +50,8 @@ header {
     position: absolute;
     right: 16px;
     bottom: 32px;
-    font-weight: lighter;
-    font-family: Helvetica Neue;
+    font-weight: 200;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
     color: #ccc;
   }
   nav {
@@ -64,7 +66,7 @@ header {
     border-top: 1px solid #333;
     border-bottom: 1px solid #333;
     ul {
-      max-width: 960px;
+      max-width: $content-max-width;
       margin: 0px auto;
       li {
         display: inline-block;
@@ -101,18 +103,20 @@ footer {
   border-top: 1px solid #222;
   font-size: 0.875em;
   color: #666;
-  max-width: 960px;
+  max-width: $content-max-width;
   a {
     color: #666;
   }
 }
 
 main {
-  max-width: 960px;
+  font-family: 'Source Sans Pro', Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300;
+  max-width: $content-max-width;
   margin: 10px auto;
   background-color: #111;
   box-sizing: border-box;
-  padding: 10px 20px;
+  padding: 10px 32px;
   pre {
     margin: 8px;
     border: 1px solid #000;
@@ -141,9 +145,12 @@ main {
       margin-bottom: 6px;
     }
   }
+  p {
+    text-align: justify;
+  }
   p,
   li {
-    line-height: 1.4em;
+    line-height: 1.6em;
   }
   div#wallpaper-gallery {
     width: 100%;
