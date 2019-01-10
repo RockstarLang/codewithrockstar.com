@@ -9,7 +9,7 @@ maybe it wants blank lines?
 
 ### Tables
 
-| First Header  | Second Header |
+| BOOM  Header  | Second Header |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
