@@ -1,0 +1,39 @@
+---
+layout: default
+title: markdown tests
+---
+<h4>Type your Rockstar program here:</h4>
+<textarea style="width: 100%; height: 200px; font-family: Consolas, monospaced;" id="program-source">Rockstar is a big bad monster
+Shout Rockstar
+</textarea>
+<input type="button" value="Rock!" onclick="rock();" />
+<h4>OUTPUT:</h4>
+<textarea style="width: 100%; height: 200px; font-family: Consolas, monospaced;" id="program-output"></textarea>
+<script type="text/javascript" src="js/satriani.js"></script>
+<script type="text/javascript">
+    function output(...args) {
+        document.getElementById('program-output').value += args + '\n';
+    }
+
+    function rock() {
+        document.getElementById('program-output').value = '';
+        let source = document.getElementById('program-source').value;
+        let interpreter = new Satriani.Interpreter(output);
+        try {
+            interpreter.interpret(source);
+        } catch (e) {
+            if (e.location && e.location.start) {
+                var lines = source.split(/\n/);
+                output(lines[e.location.start.line - 1]);
+                output(' '.repeat(e.location.start.column - 1) + '^');
+                output(e.message);
+                output(sourceFilePath + " line " + e.location.start.line + " col " + e.location.start.column);
+            } else {
+                output(e);
+            }
+
+        }
+
+
+    }
+</script>
