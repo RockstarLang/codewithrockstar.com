@@ -9,6 +9,10 @@ Shout Rockstar
 <input type="button" value="Rock!" onclick="rock();" />
 <h4>OUTPUT:</h4>
 <textarea style="width: 100%; height: 200px; font-family: Consolas, monospaced;" id="program-output"></textarea>
+<a href="online?load=/examples/fizzbuzz.rock">fizzbuzz</a>
+<a href="online?load=/examples/99_beer.rock" onclick="return(loadRockstar('/rockstar/tests/fixtures/examples/99_beers.rock'));">99
+    bottles of beer</a>
+
 <script type="text/javascript" src="js/satriani.js"></script>
 <script type="text/javascript">
     function output(...args) {
@@ -17,10 +21,11 @@ Shout Rockstar
 
     function rock() {
         document.getElementById('program-output').value = '';
-        let source = document.getElementById('program-source').value;
-        let interpreter = new Satriani.Interpreter(output);
+        let source = document.getElementById('program-source').value + "\n\n\n\n\n";
+        let input = () => { return window.prompt('Rockstar:'); }
+        let rockstar = new Satriani.Interpreter(output);
         try {
-            interpreter.interpret(source);
+            rockstar.run(source, input, output);
         } catch (e) {
             if (e.location && e.location.start) {
                 var lines = source.split(/\n/);
@@ -31,9 +36,21 @@ Shout Rockstar
             } else {
                 output(e);
             }
-
         }
-
-
     }
+
+    function loadRockstar(url) {
+        alert(url);
+        $.get(url, function (data) {
+            alert(data);
+            document.getElementById('program-source').value = data;
+
+        });
+        return (false);
+    }
+
+
+
+
+
 </script>
