@@ -43,13 +43,15 @@ Environment.prototype = {
     },
 
     run: function(program) {
-        return evaluate(program, this);
+        let result = evaluate(program, this);
+        if (result && result.action) return(result.value);
     },
+    
     pronoun_alias: null,
     pronoun_value: null,
 }
 
- function evaluate(tree, env, flag) {
+ function evaluate(tree, env) {
      if (tree == MYSTERIOUS) return(undefined);
      let list = Object.entries(tree)
      for (let i = 0; i < list.length; i++) {
@@ -67,9 +69,9 @@ Environment.prototype = {
                  return result;
              case "conditional":
                  if (evaluate(expr.condition, env)) {
-                     return evaluate(expr.consequent, env, flag)
+                     return evaluate(expr.consequent, env)
                  } else if (expr.alternate) {
-                     return evaluate(expr.alternate, env, flag);
+                     return evaluate(expr.alternate, env);
                  }
                  return;
              case 'break':
@@ -77,13 +79,13 @@ Environment.prototype = {
              case 'continue':
                  return { 'action' : 'continue' };
              case "return":
-                 return { 'action': 'return', 'value': evaluate(expr.expression, env, flag) };
+                 return { 'action': 'return', 'value': evaluate(expr.expression, env) };
              case "number":
              case "string":
              case "constant":
                  return (expr);
              case "output":
-                 let printable = evaluate(expr, env, flag);
+                 let printable = evaluate(expr, env);
                  if (typeof (printable) == 'undefined') printable = "mysterious";
                  env.output(printable);
                  return;
@@ -135,8 +137,8 @@ Environment.prototype = {
                  return;
 
              case "while_loop":
-                 while_outer: while (evaluate(expr.condition, env, flag)) {
-                     let result = evaluate(expr.consequent, env, flag);
+                 while_outer: while (evaluate(expr.condition, env)) {
+                     let result = evaluate(expr.consequent, env);
                      if (result) switch(result.action) {
                          case 'continue':
                              continue while_outer;
@@ -148,8 +150,8 @@ Environment.prototype = {
                  }
                  return;
              case "until_loop":
-                 until_outer: while (!evaluate(expr.condition, env, flag)) {
-                     let result = evaluate(expr.consequent, env, flag);
+                 until_outer: while (!evaluate(expr.condition, env)) {
+                     let result = evaluate(expr.consequent, env);
                      if (result) switch(result.action) {
                          case 'continue':
                              continue until_outer;
@@ -161,8 +163,8 @@ Environment.prototype = {
                  }
                  return;
              case "comparison":
-                 let lhs = evaluate(expr.lhs, env, flag);
-                 let rhs = evaluate(expr.rhs, env, flag);
+                 let lhs = evaluate(expr.lhs, env);
+                 let rhs = evaluate(expr.rhs, env);
                  switch (expr.comparator) {
                      case "eq":
                          return eq(lhs, rhs);
@@ -178,19 +180,19 @@ Environment.prototype = {
                          return (lhs > rhs);
                  }
              case "and":
-                 return (evaluate(expr.lhs, env, flag) && evaluate(expr.rhs, env, flag));
+                 return (evaluate(expr.lhs, env) && evaluate(expr.rhs, env));
              case "nor":
-                 return (!evaluate(expr.lhs, env, flag) && !evaluate(expr.rhs, env, flag));
+                 return (!evaluate(expr.lhs, env) && !evaluate(expr.rhs, env));
              case "or":
-                 return (evaluate(expr.lhs, env, flag) || evaluate(expr.rhs, env, flag));
+                 return (evaluate(expr.lhs, env) || evaluate(expr.rhs, env));
              case "not":
-                 return (!evaluate(expr.expression, env, flag));
+                 return (!evaluate(expr.expression, env));
              case "function":
-                 env.assign(expr.name, make_lambda(expr, env, flag));
+                 env.assign(expr.name, make_lambda(expr, env));
                  return;
              case "call":
                  let func = env.lookup(expr.name);
-                 return func.apply(null, expr.args.map(arg => evaluate(arg, env, flag)));
+                 return func.apply(null, expr.args.map(arg => evaluate(arg, env)));
              default:
                  throw new Error("Sorry - I don't know how to evaluate this: " + JSON.stringify(tree))
 
