@@ -1,17 +1,18 @@
 ---
 layout: default
-title: markdown tests
+title: try it
 ---
-<h4>Type your Rockstar program here:</h4>
-<textarea style="width: 100%; height: 200px; font-family: Consolas, monospaced;" id="program-source">Rockstar is a big bad monster
+<p>Type your Rockstar program here, or try these examples: <a href="online?load=/rockstar/examples/fizzbuzz.rock">fizzbuzz</a>
+    &bull; <a href="online?load=/rockstar/examples/99_beers.rock">99 bottles of beer</a></p>
+<textarea id="program-source">Rockstar is a big bad monster
 Shout Rockstar
 </textarea>
 <input type="button" value="Rock!" onclick="rock();" />
-<h4>OUTPUT:</h4>
-<textarea style="width: 100%; height: 200px; font-family: Consolas, monospaced;" id="program-output"></textarea>
-<a href="online?load=/examples/fizzbuzz.rock">fizzbuzz</a>
-<a href="online?load=/examples/99_beer.rock" onclick="return(loadRockstar('/rockstar/tests/fixtures/examples/99_beers.rock'));">99
-    bottles of beer</a>
+<p>Output:</p>
+<textarea id="program-output"></textarea>
+<p>Online Rockstar interpreter powered by <a href="https://github.com/RockstarLang/rockstar/tree/master/satriani">Satriani</a>.</p>
+
+
 
 <script type="text/javascript" src="js/satriani.js"></script>
 <script type="text/javascript">
@@ -39,10 +40,18 @@ Shout Rockstar
         }
     }
 
+    $(function () {
+        if (location.search && location.search.split) {
+            pairs = location.search.substring(1).split('&');
+            for (var i = 0; i < pairs.length; i++) {
+                if (pairs[i] && pairs[i].split) bits = pairs[i].split('=');
+                if (bits[0] == 'load') loadRockstar(bits[1]);
+            }
+        }
+    });
+
     function loadRockstar(url) {
-        alert(url);
         $.get(url, function (data) {
-            alert(data);
             document.getElementById('program-source').value = data;
 
         });
