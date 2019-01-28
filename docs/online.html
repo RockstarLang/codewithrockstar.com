@@ -48,6 +48,9 @@ Shout Rockstar
                 if (bits[0] == 'load') loadRockstar(bits[1]);
             }
         }
+        $('#program-source').keydown(function (e) {
+            if ((e.metaKey || e.ctrlKey) && e.keyCode == 13) rock();
+        });
     });
 
     function loadRockstar(url) {
