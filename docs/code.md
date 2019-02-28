@@ -4,11 +4,19 @@ title: code
 ---
 ## Implementations
 
-The Rockstar language spec is at [github.com/RockstarLang/rockstar](https://www.github.com/dylanbeattie/rockstar). 
+The Rockstar language spec is at [github.com/RockstarLang/rockstar](https://www.github.com/RockstarLang/rockstar). 
+
+### Satriani 
 
 The official reference implementation is [Satriani](https://github.com/RockstarLang/rockstar/tree/master/satriani), a JavaScript parser and interpreter - you can [run it directly in your browser](online) or from the command line using nodeJS.
 
-### Rockstar Implementations
+### Rocky
+
+[gaborsch](https://github.com/gaborsch) has created [Rocky](https://github.com/gaborsch/rocky), a fully-compliant Rockstar interpreter in Java, including a REPL mode, a CLI debugger, and the option to use DEC64 numbers (as per the original Rockstar draft spec) instead of IEEE754.
+
+### Other Implementations
+
+Compilers, transpilers and interpreters created by rockstar developers around the world. Not all of them are feature-complete but they're still pretty awesome.
 
 * [rockstar-js](https://github.com/wolfgang42/rockstar-js) - Rockstar-to-JavaScript transpiler
 * [rockstar-lexer](https://github.com/aitorres/rockstar-lexer) - Rockstar lexer written in Haskell with Alex
