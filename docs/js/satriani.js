@@ -228,8 +228,8 @@ Environment.prototype = {
  }
 
  function binary(b, env) {
-     let l = evaluate(b.left, env);
-     let r = evaluate(b.right, env);
+     let l = evaluate(b.lhs, env);
+     let r = evaluate(b.rhs, env);
      if (typeof(l) == 'undefined') l = 'mysterious';
      if (typeof(r) == 'undefined') r = 'mysterious'
      switch (b.op) {
@@ -649,10 +649,10 @@ function peg$parse(input, options) {
       peg$c179 = function() { return 'ge' },
       peg$c180 = function() { return 'le' },
       peg$c181 = function(first, rest) { return rest.reduce(function(memo, curr) {
-                            return { binary: { op: curr[0], left: memo, right: curr[1]} };
+                            return { binary: { op: curr[0], lhs: memo, rhs: curr[1]} };
                       }, first); },
       peg$c182 = function(first, rest) { return rest.reduce(function(memo, curr) {
-                          return { binary: { op: curr[0], left: memo, right: curr[1]} };
+                          return { binary: { op: curr[0], lhs: memo, rhs: curr[1]} };
                       }, first); },
       peg$c183 = "+",
       peg$c184 = peg$literalExpectation("+", false),
@@ -757,8 +757,8 @@ function peg$parse(input, options) {
               expression: { 
                 binary: { 
                   op: o, 
-                  left: { lookup: { variable: v } }, 
-                  right: e
+                  lhs: { lookup: { variable: v } }, 
+                  rhs: e
                 } 
               } 
             } }; 
