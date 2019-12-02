@@ -2,28 +2,40 @@
 layout: default
 title: try it
 ---
-<p>Type your Rockstar program here, or try these examples: <a href="online?load=/rockstar/examples/fizzbuzz.rock">fizzbuzz</a>
+<p>Type your Rockstar program here, or try these examples: <a
+        href="online?load=/rockstar/examples/fizzbuzz.rock">fizzbuzz</a>
     &bull; <a href="online?load=/rockstar/examples/99_beers.rock">99 bottles of beer</a></p>
-<textarea id="program-source">Rockstar is a big bad monster
+<div id="interpreter">
+    <textarea id="program-source">Rockstar is a big bad monster
 Shout Rockstar
 </textarea>
-<input type="button" value="Rock!" onclick="rock();" />
-<p>Output:</p>
-<textarea id="program-output"></textarea>
-<p>Online Rockstar interpreter powered by <a href="https://github.com/RockstarLang/rockstar/tree/master/satriani">Satriani</a>.</p>
+
+    <p><label for="enable-input-buffer"><input type="checkbox" name="enable-input-buffer" id="enable-input-buffer" checked="checked" />
+            Use input buffer?</label></p>
+    <div id="program-input-wrapper">
+        <textarea id="program-input"></textarea>
+    </div>
+    <input type="button" value="Rock!" onclick="rock();" />
+    <p>Output:</p>
+    <textarea id="program-output"></textarea> </div>
+</div>
+<p>Online Rockstar interpreter powered by <a
+        href="https://github.com/RockstarLang/rockstar/tree/master/satriani">Satriani</a>.</p>
 
 
 
-<script type="text/javascript" src="js/satriani.js"></script>
+<script type="text/javascript" src="rockstar/satriani/deploy/docs/js/satriani.js"></script>
 <script type="text/javascript">
     function output(...args) {
         document.getElementById('program-output').value += args + '\n';
     }
 
     function rock() {
+        let stdin = document.getElementById('program-input').value.split(/\r?\n/);
+        let enableInputBuffer =  $("#enable-input-buffer").is(':checked');
+        let input = () => { return (enableInputBuffer ? stdin.shift() : window.prompt('Rockstar:')); }
         document.getElementById('program-output').value = '';
         let source = document.getElementById('program-source').value + "\n\n\n\n\n";
-        let input = () => { return window.prompt('Rockstar:'); }
         let rockstar = new Satriani.Interpreter(output);
         try {
             rockstar.run(source, input, output);
@@ -48,6 +60,13 @@ Shout Rockstar
                 if (bits[0] == 'load') loadRockstar(bits[1]);
             }
         }
+        $("#enable-input-buffer").change(function (e) {
+            if (this.checked) {
+                $("#program-input-wrapper").slideDown();
+            } else {
+                $("#program-input-wrapper").slideUp();
+            }
+        });
         $('#program-source').keydown(function (e) {
             if ((e.metaKey || e.ctrlKey) && e.keyCode == 13) rock();
         });
