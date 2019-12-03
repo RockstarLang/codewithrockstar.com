@@ -3,8 +3,8 @@ layout: default
 title: try it
 ---
 <p>Type your Rockstar program here, or try these examples: <a
-        href="online?load=/rockstar/examples/fizzbuzz.rock">fizzbuzz</a>
-    &bull; <a href="online?load=/rockstar/examples/99_beers.rock">99 bottles of beer</a></p>
+        href="online?source=/rockstar/examples/fizzbuzz.rock">fizzbuzz</a>
+    &bull; <a href="online?source=/rockstar/examples/99_beers.rock">99 bottles of beer</a></p>
 <div id="interpreter">
     <textarea id="program-source">Rockstar is a big bad monster
 Shout Rockstar
@@ -57,7 +57,8 @@ Shout Rockstar
             pairs = location.search.substring(1).split('&');
             for (var i = 0; i < pairs.length; i++) {
                 if (pairs[i] && pairs[i].split) bits = pairs[i].split('=');
-                if (bits[0] == 'load') loadRockstar(bits[1]);
+                if (bits[0] == 'source') load('program-source', bits[1]);
+                if (bits[0] == 'input') load('program-input', bits[1]);
             }
         }
         $("#enable-input-buffer").change(function (e) {
@@ -72,9 +73,9 @@ Shout Rockstar
         });
     });
 
-    function loadRockstar(url) {
+    function load(elementId, url) {
         $.get(url, function (data) {
-            document.getElementById('program-source').value = data;
+            document.getElementById(elementId).value = data;
 
         });
         return (false);
