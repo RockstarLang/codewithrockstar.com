@@ -5,7 +5,7 @@ title: day 02
 
 # Adding Arrays to Rockstar
 
-<a href="/online?source=/advent/day02/intcodes.rock">try it online</a>
+<a href="/online?source=/advent/day02/intcodes.rock&input=/advent/day02/intcodes.rock.in">try it online</a>
 
 Hello, festive Rockstar developers. So... if day 1's requirement for arithmetic rounding threw a spanner in the works, day 2 has basically emptied a sack of wrenches into the delicate internal workings. And I cheated and peeked ahead at day 3 and that makes things even, um, wrenchier.
 
