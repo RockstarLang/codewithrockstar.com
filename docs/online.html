@@ -45,7 +45,7 @@ Shout Rockstar
                 output(lines[e.location.start.line - 1]);
                 output(' '.repeat(e.location.start.column - 1) + '^');
                 output(e.message);
-                output(sourceFilePath + " line " + e.location.start.line + " col " + e.location.start.column);
+                output("Source line " + e.location.start.line + " col " + e.location.start.column);
             } else {
                 output(e);
             }
@@ -57,7 +57,10 @@ Shout Rockstar
             pairs = location.search.substring(1).split('&');
             for (var i = 0; i < pairs.length; i++) {
                 if (pairs[i] && pairs[i].split) bits = pairs[i].split('=');
-                if (bits[0] == 'source') load('program-source', bits[1]);
+                if (bits[0] == 'source') {
+                    console.log('loading source ' + bits[1]);
+                    load('program-source', bits[1]);
+                }
                 if (bits[0] == 'input') load('program-input', bits[1]);
             }
         }

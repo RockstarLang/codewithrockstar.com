@@ -189,6 +189,11 @@ main {
   li {
     line-height: 1.6em;
   }
+  p {
+    img {
+      max-width: 100%;
+    }
+  }
   div#wallpaper-gallery {
     width: 100%;
     img {
