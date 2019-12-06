@@ -1,0 +1,45 @@
+Adjacent takes a number
+Let digits be "_" with a number with "_"
+Let index be 0
+While index is less than 5
+Cast digits at index into W
+Cast digits at index plus 1 into X
+Cast digits at index plus 2 into Y
+Cast digits at index plus 3 into Z
+if W ain't X and X is Y and Y ain't Z 
+Give back true
+
+Build index up
+
+Give back false
+
+
+Increasing takes a number
+Let digits be a number with ""
+Let index be 0
+While index is less than 5
+Cast digits at index into X
+Cast digits at index plus 1 into Y
+if X is greater than Y
+give back false
+
+Build index up
+
+Give back true
+
+
+
+Listen to the inputs
+Split the inputs into tokens using "-"
+Cast tokens at 0 into lbound
+Cast tokens at 1 into ubound
+
+Let value be lbound
+Let count be nothing
+Until value is greater than ubound
+If adjacent taking value is true and increasing taking value is true
+Build count up
+
+Build value up
+
+Give back count

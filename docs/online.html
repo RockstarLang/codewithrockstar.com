@@ -10,13 +10,12 @@ title: try it
 Shout Rockstar
 </textarea>
 
-    <p><label for="enable-input-buffer"><input type="checkbox" name="enable-input-buffer" id="enable-input-buffer" checked="checked" />
-            Use input buffer?</label></p>
+    <p>Input:</p>
     <div id="program-input-wrapper">
         <textarea id="program-input"></textarea>
     </div>
-    <input type="button" value="Rock!" onclick="rock();" />
-    <p>Output:</p>
+    <input type="button" value="Rock!" id="rock-button" onclick="rock();" />
+    <p>Output: <a id="cancel-execution" href="#">cancel</a></p>
     <textarea id="program-output"></textarea> </div>
 </div>
 <p>Online Rockstar interpreter powered by <a
@@ -25,62 +24,4 @@ Shout Rockstar
 
 
 <script type="text/javascript" src="rockstar/satriani/deploy/docs/js/satriani.js"></script>
-<script type="text/javascript">
-    function output(...args) {
-        document.getElementById('program-output').value += args + '\n';
-    }
-
-    function rock() {
-        let stdin = document.getElementById('program-input').value.split(/\r?\n/);
-        let enableInputBuffer =  $("#enable-input-buffer").is(':checked');
-        let input = () => { return (enableInputBuffer ? stdin.shift() : window.prompt('Rockstar:')); }
-        document.getElementById('program-output').value = '';
-        let source = document.getElementById('program-source').value + "\n\n\n\n\n";
-        let rockstar = new Satriani.Interpreter(output);
-        try {
-            rockstar.run(source, input, output);
-        } catch (e) {
-            if (e.location && e.location.start) {
-                var lines = source.split(/\n/);
-                output(lines[e.location.start.line - 1]);
-                output(' '.repeat(e.location.start.column - 1) + '^');
-                output(e.message);
-                output("Source line " + e.location.start.line + " col " + e.location.start.column);
-            } else {
-                output(e);
-            }
-        }
-    }
-
-    $(function () {
-        if (location.search && location.search.split) {
-            pairs = location.search.substring(1).split('&');
-            for (var i = 0; i < pairs.length; i++) {
-                if (pairs[i] && pairs[i].split) bits = pairs[i].split('=');
-                if (bits[0] == 'source') {
-                    console.log('loading source ' + bits[1]);
-                    load('program-source', bits[1]);
-                }
-                if (bits[0] == 'input') load('program-input', bits[1]);
-            }
-        }
-        $("#enable-input-buffer").change(function (e) {
-            if (this.checked) {
-                $("#program-input-wrapper").slideDown();
-            } else {
-                $("#program-input-wrapper").slideUp();
-            }
-        });
-        $('#program-source').keydown(function (e) {
-            if ((e.metaKey || e.ctrlKey) && e.keyCode == 13) rock();
-        });
-    });
-
-    function load(elementId, url) {
-        $.get(url, function (data) {
-            document.getElementById(elementId).value = data;
-
-        });
-        return (false);
-    }
-</script>
+<script type="text/javascript" src="js/rockstar.js"></script>
