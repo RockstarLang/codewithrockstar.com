@@ -1,0 +1,28 @@
+The index is 0
+Listen to the line
+Until the line is nothing
+Split the line into bits using ")"
+Let the orbited be bits at 0
+Let the orbiter be bits at 1
+Let the map at the orbiter be the orbited
+Let the list at the index be the orbiter
+Build the index up
+Listen to the line
+
+Distance takes the planet
+Let the parent be the map at the planet
+If the parent is "COM"
+Give back 1
+else
+Give back 1 with distance taking the parent
+
+The index is 0
+The total is 0
+While the index is less than the list
+Let the planet be the list at the index
+Let my distance be distance taking the planet
+Let the total be the total with my distance
+Build the index up
+
+Shout the total
+
