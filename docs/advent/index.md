@@ -15,5 +15,7 @@ operation. Or any kind of type conversion. But now it does. Read all about [Addi
   * also solved by [this submission](day04/index#lars-erik-aabechs-solution) from [Lars-Erik Aabech](https://twitter.com/bleedo/status/1202751102107697153)
 * Day 5 - no solution yet.
 * [Day 6](day06/) - **solved** - both minimalist and idiomatic solutions to part 1. No part 2 yet. 
+* Day 7 - not yet...
+* [Day 8](day08/) – in progress! 
 
   
