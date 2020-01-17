@@ -1,0 +1,50 @@
+Midnight takes your heart and your soul
+While your heart is as high as your soul
+Put your heart without your soul into your heart
+
+Give back your heart
+
+The limit is 150
+
+Listen to the input
+Split the input
+The index is 0
+The layer is 0
+Let the counts at "0" be 0
+Let the counts at "1" be 0
+Let the counts at "2" be 0
+The answer is 0
+Let the lowest be the limit
+While the index is less than the input
+Let the digit be the input at the index
+Let the counts at the digit be with 1
+Build the index up
+If midnight taking the index, 150 is nothing
+Shout "=============="
+Shout the counts at "0"
+Shout the lowest
+Shout the lowest with the counts at "0" 
+Shout "DONE ====================="
+Let the niblet be the counts at "0"
+If the niblet is weaker than the lowest
+Shout "FOUND A LOW THING!"
+Shout the counts at "0" 
+Shout "that's the lowest one yet!"
+Let the lowest be the niblet
+Let the foo be the counts at "1"
+let the bar be the counts at "2"
+Put the foo of the bar into the answer
+
+Shout "Layer " with the layer
+Shout "0s: " with the counts at "0"
+Shout "1s: " with the counts at "1"
+Shout "2s: " with the counts at "2" 
+Shout "==========================="
+Let the counts at "0" be 0
+Let the counts at "1" be 0
+Let the counts at "2" be 0
+Build the layer up
+
+
+
+Shout the answer
