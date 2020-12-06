@@ -36,3 +36,7 @@ Compilers, transpilers and interpreters created by rockstar developers around th
 * [vim-rockstar](https://github.com/sirosen/vim-rockstar) - Syntax highlighting for vim
 * [vscode-rockstar-language](https://github.com/ra100/vscode-rockstar-language) - Syntax highlighting for VSCode
 
+### Projects related to and inspired by Rockstar
+* [Enterpise](https://github.com/joaomilho/Enterprise) - the Enterprise™ programming language, by [@joaomilho](https://github.com/joaomilho)
+* [JavaLikeRockstar](https://github.com/LivelyCarpet87/JavaLikeRockstar) - a Java package that makes Java code read more like Rockstar, by [@LivelyCarpet87](https://github.com/LivelyCarpet87)
+
