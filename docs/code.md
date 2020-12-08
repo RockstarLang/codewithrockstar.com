@@ -27,6 +27,7 @@ Compilers, transpilers and interpreters created by rockstar developers around th
 * [maiden](https://github.com/palfrey/maiden) - Rockstar interpreter in Rust ([online version using WebAssembly](https://palfrey.github.io/maiden/))
 * [rockstar-webpiler](https://github.com/cwfitzgerald/rockstar-webpiler) - Online Rockstar Parser and Transpiler. [rockstar.connorwfitzgerald.com](https://rockstar.connorwfitzgerald.com)
 * [chirp](https://github.com/Suloch/chirp) - Rockstar interpreter in C using flex and yaac
+* [rockstar-feat-csharp](https://github.com/theolivenbaum/rockstar-feat-csharp) - Embed Rockstar on your C# code using source-code generators
 * [sellout](https://github.com/davidadsit/sellout) - Rockstar to C# (dotnet core) transpiler
 
 ### Syntax highlighters and tooling
