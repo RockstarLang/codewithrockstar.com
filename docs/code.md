@@ -30,6 +30,8 @@ Compilers, transpilers and interpreters created by rockstar developers around th
 * [rockstar-feat-csharp](https://github.com/theolivenbaum/rockstar-feat-csharp) - Embed Rockstar on your C# code using source-code generators
 * [sellout](https://github.com/davidadsit/sellout) - Rockstar to C# (dotnet core) transpiler
 
+* [Tjark Gaudich](https://github.com/TjarkG/) has created [Rockstar-C](https://github.com/TjarkG/Rockstar-C), a transpiler that translates a subset of ANSI C into the equivalent Rockstar code.
+
 ### Syntax highlighters and tooling
 
 * [sublime-rockstar-syntax](https://github.com/paxromana96/sublime-rockstar-syntax) - Syntax highlighter for Sublime Text 3
