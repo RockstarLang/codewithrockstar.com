@@ -1,4 +1,4 @@
-self.importScripts('/rockstar/satriani/deploy/docs/js/satriani.js');
+self.importScripts('/js/satriani.js');
 
 function output(...args) {
     self.postMessage({ output: args });
