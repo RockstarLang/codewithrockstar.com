@@ -1,3 +1,4 @@
 [submodule "docs/rockstar"]
 	path = docs/rockstar
 	url = https://github.com/RockstarLang/rockstar.git
+	branch = main
