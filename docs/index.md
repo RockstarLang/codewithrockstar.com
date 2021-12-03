@@ -37,4 +37,4 @@ Take it to the top
 Whisper my world
 ```
 
-Inspired by [this tweet from Paul Stovell](https://twitter.com/paulstovell/status/1013960369465782273?lang=en), the [Rockstar language ](/docs) was created by <a href="https://www.dylanbeattie.net/">Dylan Beattie</a>. There are [multiple open source implementations](/code), and Rockstar has been [widely covered on the web](/news), including articles on BoingBoing and in Classic Rock magazine.
+Inspired by [this tweet from Paul Stovell](https://web.archive.org/web/20180703102005/https://twitter.com/paulstovell/status/1013960369465782273), the [Rockstar language ](/docs) was created by <a href="https://www.dylanbeattie.net/">Dylan Beattie</a>. There are [multiple open source implementations](/code), and Rockstar has been [widely covered on the web](/news), including articles on BoingBoing and in Classic Rock magazine.
