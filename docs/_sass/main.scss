@@ -276,7 +276,7 @@ div#interpreter {
       background-repeat: no-repeat;
       background-image: url(/assets/images/ajax-loader.gif);
     }
-    &#program-input { 
+    &#program-input {
       height: 60px;
     }
 
@@ -295,4 +295,37 @@ input[type="button"] {
     color: #ccc;
     background-color: #333;
   }
+}
+
+div#shirts-banner {
+	padding: 10px;
+	border-radius: 10px;
+	border: 2px solid #572376;
+	margin: 20px auto;
+	max-width: 960px;
+	letter-spacing: 0.1em;
+	line-height: 1.4em;
+	a {
+		color: #fff;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	background-color: #000;
+	text-align: center;
+	img {
+		width: 110px;
+		height: 110px;
+		margin: 10px;
+	}
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	div {
+		flex-grow: 1;
+		a {
+			font-size: 1.2em;
+		}
+	}
 }

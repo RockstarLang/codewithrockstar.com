@@ -67,7 +67,7 @@ $(function () {
         if ((e.metaKey || e.ctrlKey) && e.keyCode == 13) rock();
     });
     $("#cancel-execution").click(function () {
-        return(stop());
+        return (stop());
     });
 });
 

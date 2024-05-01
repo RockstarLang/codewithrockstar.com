@@ -2,33 +2,45 @@
 <html>
 
 <head>
-  <!-- Fathom analytics tag -->
-  <script src="https://a41e7e99-ee3b-440d-b4af-9aab32bb3ae8.codewithrockstar.com/script.js" data-site="XEFKZVQW"
-    defer></script>
-  <meta charset="utf-8">
-  <title>rockstar : {{ page.title }}</title>
-  <link type="text/css" rel="stylesheet" href="/assets/styles.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-  <script src="/js/jquery/jquery-3.3.1.min.js"></script>
+	<!-- Fathom analytics tag -->
+	<script src="https://a41e7e99-ee3b-440d-b4af-9aab32bb3ae8.codewithrockstar.com/script.js" data-site="XEFKZVQW"
+		defer></script>
+	<meta charset="utf-8">
+	<title>rockstar : {{ page.title }}</title>
+	<link type="text/css" rel="stylesheet" href="/assets/styles.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<script src="/js/jquery/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
-  <header>
-    <h1>ROCKSTAR</h1>
-    <h2>Tommy used to work on the docs.</h2>
-    {% include nav.html %}
-  </header>
-  <main>
-    {{ content }}
-  </main>
-  <footer>
-    codewithrockstar.com website copyright &copy; 2018-2022 <a href="https://dylanbeattie.net/">dylan beattie</a>
-    &bull;
-    <a href="/code_of_conduct">code of conduct</a>
-    &bull;
-    <a href="https://app.usefathom.com/share/xefkzvqw/codewithrockstar.com">analytics</a> by Fathom
-  </footer>
+	<header>
+		<h1>ROCKSTAR</h1>
+		<h2>Tommy used to work on the docs.</h2>
+		{% include nav.html %}
+	</header>
+	<div id="shirts-banner">
+		<a href="https://shop.codewithrockstar.com/"><img src="/assets/images/shirts/shirt1.jpg" />
+			<img src="/assets/images/shirts/shirt2.jpg" /></a>
+		<div>
+			<h2>Rockstar T-shirts now on sale!</h2>
+			Check em 'out: <br /> <a href="https://shop.codewithrockstar.com/">shop.codewithrockstar.com</a>
+		</div>
+		<a href="https://shop.codewithrockstar.com/"><img src="/assets/images/shirts/shirt3.jpg" /><img
+				src="/assets/images/shirts/shirt4.jpg" /></a>
+	</div>
+
+	<main>
+		{{ content }}
+	</main>
+	<footer>
+		codewithrockstar.com website copyright &copy; 2018-2022 <a href="https://dylanbeattie.net/">dylan
+			beattie</a>
+		&bull;
+		<a href="/code_of_conduct">code of conduct</a>
+		&bull;
+		<a href="https://app.usefathom.com/share/xefkzvqw/codewithrockstar.com">analytics</a> by Fathom
+	</footer>
 </body>
 
 </html>
