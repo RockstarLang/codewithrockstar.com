@@ -297,6 +297,19 @@ input[type="button"] {
   }
 }
 
+div#beta-banner {
+	background-color: #381c5d !important;
+	border-color: #381c5d;
+	border-width: 1px 0 1px 0;
+	border-style: outset;
+	margin: 10px 0;
+	padding: 16px;
+	text-align: center;
+	font-size: 120%;
+	a {
+		color: #fff;
+	}
+}
 div#shirts-banner {
 	padding: 10px;
 	border-radius: 10px;
