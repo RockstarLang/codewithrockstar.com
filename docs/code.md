@@ -31,6 +31,7 @@ Compilers, transpilers and interpreters created by rockstar developers around th
 * [sellout](https://github.com/davidadsit/sellout) - Rockstar to C# (dotnet core) transpiler
 
 * [Tjark Gaudich](https://github.com/TjarkG/) has created [Rockstar-C](https://github.com/TjarkG/Rockstar-C), a transpiler that translates a subset of ANSI C into the equivalent Rockstar code.
+* [binford2k-rockstar](https://github.com/binford2k/binford2k-rockstar) Automate Rockstar across your infrastructure with Puppet.
 
 ### Syntax highlighters and tooling
 
